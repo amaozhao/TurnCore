@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "turncore"
+version = "0.1.0"
+description = "A session-scoped agent kernel protocol library."
+readme = "README.md"
+requires-python = ">=3.11"
+
+[tool.setuptools.packages.find]
+include = ["turn*"]
+
+[tool.pytest.ini_options]
+testpaths = ["test"]
+python_files = ["*.py"]
+addopts = "--import-mode=importlib"
+pythonpath = ["."]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+
+[tool.pyright]
+include = ["turn"]
+pythonVersion = "3.11"
+typeCheckingMode = "strict"
